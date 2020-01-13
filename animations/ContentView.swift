@@ -8,14 +8,25 @@
 
 import SwiftUI
 
+struct AnimationIntegratedController: UIViewControllerRepresentable {
+    
+    func makeUIViewController(context: UIViewControllerRepresentableContext<AnimationIntegratedController>) -> LoadAnimationController {
+        return LoadAnimationController()
+    }
+    
+    func updateUIViewController(_ uiViewController: LoadAnimationController, context: UIViewControllerRepresentableContext<AnimationIntegratedController>) {
+        
+    }
+}
+
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        AnimationIntegratedController().edgesIgnoringSafeArea(.all)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView()//.previewLayout(.fixed(width: 300, height: 400))
     }
 }
